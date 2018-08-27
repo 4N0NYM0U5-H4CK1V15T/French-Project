@@ -5,5 +5,3 @@ table {
 table, th, td {
     border: 1px solid black;
 }
-table { table-layout: fixed; }
-td { width: 33%; }
