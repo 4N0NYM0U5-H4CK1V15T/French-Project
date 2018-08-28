@@ -15,3 +15,11 @@ td {
 .ending {
 	color: red
 }
+
+#next {
+	border: 1px solid black;
+	width: 40px;
+	text-align: center;
+	margin: 20px;
+	background-color: #AACCAA
+}
