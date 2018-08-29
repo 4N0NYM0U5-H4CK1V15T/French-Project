@@ -15,6 +15,9 @@ td {
 .ending {
 	color: red
 }
+th .stem {
+	text-transform: capitalize;
+}
 
 #next {
 	border: 1px solid black;
@@ -22,4 +25,9 @@ td {
 	text-align: center;
 	margin: 20px;
 	background-color: #AACCAA
+}
+
+#next:hover {
+	background-color: #88AA88;
+	cursor: pointer;
 }
