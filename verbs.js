@@ -21,8 +21,10 @@ function nextDifferentVerbIndex() {
 
 function updateVerbTable(verb) {
 	const french = verb.frenchInfinitive;
+	const english = verb.englishInfinitive;
 	const stem = french.substring(0, french.length - 2);
 	$(".stem").html(stem);
+	$(".english").html(english);
 }
 
 function changeVerb() {
