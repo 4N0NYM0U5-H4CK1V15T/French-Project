@@ -17,21 +17,26 @@ function updateVerbTable(verb) {
 	$(".stem").html(stem);
 }
 
-$(function() { // This code will be called when the document has loaded.
+function changeVerb() {
+	verbIndex = nextDifferentVerbIndex();
+	console.log("You get " + verbIndex +" , which is " + verbs[verbIndex]);
+	updateVerbTable(verbs[verbIndex]);
+}
+
+function init() { 
 	console.log("The document has loaded.");
 	$(".ending").each(
 		function(idx) {
 		}
 	);
-	$("#next").click(function() {
-		verbIndex = nextDifferentVerbIndex();
-		console.log("You get " + verbIndex +" , which is " + verbs[verbIndex]);
-		updateVerbTable(verbs[verbIndex]);
-	});
+	$("#next").click(changeVerb);
 	
 	for (var i=0; i<verbs.length; i++)
 		console.log(verbs[i]);
+	
+	changeVerb();
 }
-);
+
+$(init); // The init() function will be called when the document has loaded.
 
 console.log("Hello world");
