@@ -1,4 +1,11 @@
-var verbs = ["parler", "jouer", "aimer"];
+const verbs = [
+	{frenchInfinitive : "parler",
+	 englishInfinitive: "to speak"}, 
+	{frenchInfinitive : "jouer",
+	 englishInfinitive: "to play"}, 
+	{frenchInfinitive : "aimer",
+	 englishInfinitive: "to like"}
+];
 var verbIndex = -1;
 
 function nextDifferentVerbIndex() {
@@ -13,30 +20,20 @@ function nextDifferentVerbIndex() {
 }
 
 function updateVerbTable(verb) {
-	var stem = verb.substring(0, verb.length - 2);
+	const french = verb.frenchInfinitive;
+	const stem = french.substring(0, french.length - 2);
 	$(".stem").html(stem);
 }
 
 function changeVerb() {
 	verbIndex = nextDifferentVerbIndex();
-	console.log("You get " + verbIndex +" , which is " + verbs[verbIndex]);
 	updateVerbTable(verbs[verbIndex]);
 }
 
 function init() { 
-	console.log("The document has loaded.");
-	$(".ending").each(
-		function(idx) {
-		}
-	);
 	$("#next").click(changeVerb);
-	
-	for (var i=0; i<verbs.length; i++)
-		console.log(verbs[i]);
 	
 	changeVerb();
 }
 
 $(init); // The init() function will be called when the document has loaded.
-
-console.log("Hello world");
